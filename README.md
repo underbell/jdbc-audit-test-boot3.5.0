@@ -26,8 +26,8 @@ INSERT operations for all entities and correctly populate the @CreatedDate field
 
 ### Actual Behavior:
 
-For new entities passed to repository.saveAll(), the @CreatedDate field is not populated, or an UPDATE operation is
-performed instead of an INSERT, despite isNew() returning true. This indicates a potential issue with how auditing
+For new entities passed to repository.saveAll(), UPDATE operation is performed instead of an INSERT. This indicates a
+potential issue with how auditing
 callbacks or isNew detection is handled during batch saveAll operations in spring-data-bom:2025.0.0.
 
 Relevant Code Snippets:
